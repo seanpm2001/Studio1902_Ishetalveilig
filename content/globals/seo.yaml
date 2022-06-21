@@ -1,12 +1,19 @@
 title: SEO
 data:
+  title_separator: '~'
   noindex_local: true
   noindex_staging: true
   noindex_production: false
+  collection_defaults:
+    -
+      collection: pages
+      fallback: page_builder
   hreflang_auto: true
   json_ld_type: none
-  breadcrumbs: false
-  use_social_image_generation: false
+  breadcrumbs: true
+  use_social_image_generation: true
+  social_images_collections:
+    - pages
   sitemap_collections:
     - pages
   trackers_local: false
