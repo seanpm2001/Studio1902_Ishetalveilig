@@ -15,15 +15,28 @@
         {{ partial:snippets/seo }}
         {{ partial:snippets/browser_appearance }}
     </head>
-    <body class="flex flex-col min-h-screen bg-white selection:bg-primary selection:text-white">
+    <body class="flex flex-col min-h-screen bg-white selection:bg-primary selection:text-white group">
         {{ partial:snippets/noscript }}
         {{ partial:navigation/skip_to_content }}
         {{ partial:components/toolbar }}
         {{ yield:seo_body }}
-
+        <div class="absolute inset-0 z-behind flex flex-col gap-8 justify-between items-center font-title text-[16rem] leading-none text-neutral uppercase select-none overflow-hidden">
+            <div
+                x-data="{ visible: false }"
+                x-intersect="visible = true, console.log('visible')"
+                :class="{ '[clip-path:polygon(0_0,_0_0,_0_100%,_0%_100%)]': !visible, '[clip-path:polygon(100%_0,_0_0,_0_100%,_100%_100%)]': visible }"
+                class="absolute inset-x-0 top-1/2 -translate-y-1/2 transition-[clip-path] duration-[1200ms]"
+            >
+                {{ svg:crack class="w-full h-auto" }}
+            </div>
+            <span class="relative -rotate-6">Nee!</span>
+            <span class="relative rotate-6">geen</span>
+            <span class="relative rotate-6">gas</span>
+        </div>
         {{ partial:layout/header }}
         {{ template_content }}
         {{ partial:layout/footer }}
+
     </body>
 </html>
 <!-- End: /layout.antlers.html -->
