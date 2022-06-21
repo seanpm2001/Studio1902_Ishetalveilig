@@ -19,14 +19,9 @@ module.exports = {
       black:   '#000',
       white:  '#fff',
       // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
-      neutral: {
-        DEFAULT: colors.slate['800'],
-        ...colors.slate
-      },
+      neutral: '#414036',
       // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
-      primary: {
-        DEFAULT: '#FF0274'
-      },
+      primary: '#539717',
     },
     extend: {
       // Set default transition durations and easing when using the transition utilities.
@@ -39,22 +34,16 @@ module.exports = {
     },
     // Remove the font families you don't want to use.
     fontFamily: {
-      mono: [
-        // Use a custom mono font for this site by changing 'Anonymous' to the
-        // font name you want and uncommenting the following line.
-        // 'Anonymous',
-        ...defaultTheme.fontFamily.mono,
-      ],
       sans: [
         // Use a custom sans serif font for this site by changing 'Gaultier' to the
         // font name you want and uncommenting the following line.
-        // 'Gaultier',
+        'Citizen',
         ...defaultTheme.fontFamily.sans,
       ],
-      serif: [
+      title: [
         // Use a custom serif font for this site by changing 'Lavigne' to the
         // font name you want and uncommenting the following line.
-        // 'Lavigne',
+        'Handelson',
         ...defaultTheme.fontFamily.serif,
       ],
     },
@@ -62,13 +51,13 @@ module.exports = {
     fontWeight: {
       // hairline: 100,
       // thin: 200,
-      // light: 300,
-      normal: 400,
+      light: 300,
+      // normal: 400,
       // medium: 500,
       // semibold: 600,
       bold: 700,
       // extrabold: 800,
-      // black: 900,
+      black: 900,
     },
   },
   plugins: [
