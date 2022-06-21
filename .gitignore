@@ -1,0 +1,20 @@
+/node_modules
+/public/hot
+/public/storage
+/public/vendor/statamic
+/public/img/
+/public/static/
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+.antlers.json
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+# Comment the following lines if you don't compile your assets on the server:
+/public/js/
+/public/css/
+/public/mix-manifest.json
