@@ -4,8 +4,8 @@
     @param* image An image URL.
     @param* sizes The sizes attribute. Something like `(min-width: 768px) 55vw, 90vw` for example.
     @param class Add optional CSS classes.
-    @param cover Boolean. Wether the image should cover the parent. Uses the focus position.
-    @param lazy Boolean. Wether the image should be natively lazy loaded.
+    @param cover Boolean. Whether the image should cover the parent. Uses the focus position.
+    @param lazy Boolean. Whether the image should be natively lazy loaded.
 #}}
 
 <!-- /components/_picture.antlers.html -->
@@ -13,7 +13,14 @@
     <picture>
         {{ asset :url="image" }}
             {{ if extension == 'svg' || extension == 'gif' }}
-                <img class="{{ class }}" src="{{ url }}" alt="{{ alt }}" />
+                <img
+                    class="{{ class }}"
+                    src="{{ url }}"
+                    alt="{{ alt | ensure_right('.') | entities }}"
+                    {{ unless alt }}
+                        aria-hidden="true"
+                    {{ /unless }}
+                />
             {{ else }}
                 <source
                     srcset="
@@ -38,16 +45,19 @@
                     type="{{ image.mime_type }}"
                 >
                 <img
+                    width="{{ image.width }}"
+                    height="{{ image.height }}"
+                    src="{{ glide:image preset='lg' }}"
+                    alt="{{ alt | ensure_right('.') | entities }}"
                     {{ if cover }}
                         class="object-cover w-full h-full {{ class }}"
                         style="object-position: {{ focus | background_position }}"
                     {{ else }}
                         class="{{ class }}"
                     {{ /if }}
-                    src="{{ glide:image preset='lg' }}"
-                    alt="{{ alt ensure_right='.' }}"
-                    width="{{ image.width }}"
-                    height="{{ image.height }}"
+                    {{ unless alt }}
+                        aria-hidden="true"
+                    {{ /unless }}
                     {{ if lazy }}
                         loading="lazy"
                     {{ /if }}

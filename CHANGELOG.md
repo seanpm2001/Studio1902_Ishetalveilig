@@ -1,5 +1,83 @@
 # Changelog
 
+## v5.8 (2022-09-01)
+
+### What's new
+- Add the ability to inject third party scripts behind the cookie banner. #252 by @robdekort
+
+## v5.7 (2022-09-01)
+
+### What's improved
+- Use `mark` modifier on search result snippet to highlight query hits. 44df2034 by @robdekort
+
+## v5.6.1 (2022-08-29)
+
+### What's fixed
+- Revert changing search snippet truncation. 55549864 by @robdekort
+
+## v5.6 (2022-08-29)
+
+### What's new
+- Remove empty nodes on Bard fields. 5e8311c4 by @robdekort
+- Use `bard_text` modifiers to simplify generating meta descriptions and search result snippets. 55549864 by @robdekort
+
+### What's fixed
+- Tpyo's in picture partial. #248 by @websmyth
+
+## v5.5 (2022-08-22)
+
+### What's improved
+- Improve nav performance in navs. #243 by @freshface
+- Hide fields where input_type == 'hidden'. #245 by @freshface
+- Do not add site title when using a custom SEO title on an entry. #246 by @freshface
+
+## v5.4.2 (2022-08-08)
+
+### What's changed
+- Removed previously needed changes for a reverted breaking Statamic change. 1ad2bf6c by @robdekort
+
+## v5.4.1 (2022-08-07)
+
+### What's fixed
+- Reset class paramater as well to circumvent an unintended breaking Statamic change (#237) *only* for new users. 23b1c7ef by @robdekort
+
+## v5.4 (2022-08-06)
+
+### What's new
+- Add `entities` modifier on alt text. 6597c4ff by @robdekort
+- Add `aria-hidden="true"` when there's no alt text. 84d8af72 by @robdekort
+
+### What's improved
+- Updated dependencies (Vite 3) 02a4f2d1 by @robdekort
+- Improve file upload styling. #238 by @freshface
+
+### What's fixed
+- Circumventing an unintended breaking Statamic change (#237) *only* for new users. 7d086aea by @robdekort
+- Typo in `page_builder.yaml`. #235 by @brendanfalkowski
+
+## v5.3 (2022-07-14)
+
+### What's fixed
+- Use vite tag instead of mix in social images layout. 6b77d479 by @robdekort
+
+## v5.2 (2022-07-13)
+
+### What's new
+- Czech translations. #233 by @kuldas
+
+## v5.1 (2022-07-06)
+
+### What's improved
+- Add aliases to Vite to support Mix commands. d769cdbb by @robdekort
+
+## v5.0 (2022-07-05)
+
+### What's new
+- Use Vite instead of Mix. #232 by @robdekort
+
+### What's improved
+- Skip to content component comes in from the top instead of bottom.
+
 ## v4.21 (2022-06-15)
 
 ### What's improved

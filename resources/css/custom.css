@@ -3,7 +3,7 @@
 @layer base {
     @font-face {
         font-family: 'Citizen';
-        src: url('/fonts/citizen-bold.woff2') format('woff2');
+        src: url('/public/fonts/citizen-bold.woff2') format('woff2');
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -11,7 +11,7 @@
 
     @font-face {
         font-family: 'Citizen';
-        src: url('/fonts/citizen-light.woff2') format('woff2');
+        src: url('/public/fonts/citizen-light.woff2') format('woff2');
         font-weight: 300;
         font-style: normal;
         font-display: swap;
@@ -19,7 +19,7 @@
 
     @font-face {
         font-family: 'Handelson';
-        src: url('/fonts/handelson-two.woff2') format('woff2');
+        src: url('/public/fonts/handelson-two.woff2') format('woff2');
         font-weight: 900;
         font-style: normal;
         font-display: swap;
