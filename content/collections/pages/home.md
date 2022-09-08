@@ -18,6 +18,6 @@ page_builder:
       - 207388fc-d45a-4344-ad81-37351a1029b7
       - 44b7bb69-ee6a-4f37-97d5-be452400044b
 seo_description: 'Nee. Meer gas winnen in Groningen is nog niet veilig. Dat is het, volgens de huidige versterkingsplannen, pas in 2028.'
-og_image: home-og-1662665506.png
-twitter_image: home-twitter-1662665506.png
+og_image: home-og-1662666294.png
+twitter_image: home-twitter-1662666294.png
 ---
