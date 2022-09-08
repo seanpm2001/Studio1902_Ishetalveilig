@@ -25,3 +25,6 @@ sections:
             - orderedlist
             - removeformat
             - anchor
+      -
+        handle: buttons
+        field: buttons.buttons

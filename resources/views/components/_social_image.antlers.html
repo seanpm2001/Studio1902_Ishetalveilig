@@ -4,20 +4,16 @@
 #}}
 
 <!-- /components/_social_image.antlers.html -->
-<div id="{{ selector }}" style="{{ style }}" class="relative p-8 flex flex-col justify-between">
+<div id="{{ selector }}" style="{{ style }}" class="relative p-12 flex flex-col [justify-between">
     {{ get_content:id }}
-        <h1 class="flex flex-col text-7xl font-bold leading-crammed text-primary">
-            {{ og_title ?? seo_title ?? title }}
-        </h1>
-        <p class="text-xl text-neutral leading-loose max-w-[40ch]">
-            {{ if og_description || seo_description }}
-                 {{ og_description ?? seo_description }}
-            {{ elseif seo:collection_defaults }}
-                 {{ partial:snippets/fallback_description }}
-            {{ /if }}
-        </p>
-        <div class="flex justify-end space-x-4">
-            {{ partial:components/logo class="w-64 h-auto" width="200" }}
+        <span class="text-6xl text-primary leading-none">
+            {{ trans:strings.questions_gas }}<br>{{ config:app:name }}
+        </span>
+        <div class="self-end font-title text-[18rem] text-neutral uppercase leading-none">
+            {{ trans:strings.questions_no }}
+        </div>
+        <div class="absolute z-behind inset-x-0 top-1/2 -translate-y-1/2 transition-[clip-path] duration-[1600ms]">
+            {{ svg:crack class="w-full h-auto opacity-50" }}
         </div>
     {{ /get_content:id }}
 </div>

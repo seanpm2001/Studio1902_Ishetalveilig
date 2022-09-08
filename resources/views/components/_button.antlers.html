@@ -13,20 +13,7 @@
     <{{ as or 'a' }}
         {{ slot:attributes }}
         class="
-            font-bold focus:outline-none focus-visible:ring focus-visible:ring-offset-2
-            {{ if button_type === 'inline' }}
-                underline motion-safe:transition
-                {{ inverted
-                    ? 'text-white focus-visible:ring-white'
-                    : 'text-primary focus-visible:ring-primary'
-                }}
-            {{ else }}
-                inline-flex items-center py-3 px-4 border-2 leading-none uppercase tracking-widest text-sm no-underline select-none whitespace-nowrap motion-safe:transition
-                {{ inverted
-                    ? 'border-white text-white focus-visible:ring-white'
-                    : 'border-primary text-primary focus-visible:ring-primary'
-                }}
-            {{ /if }}
+            font-bold focus:outline-none focus-visible:ring focus-visible:ring-offset-2 text-primary focus-visible:ring-primary leading-none underline decoration-wavy decoration-2 underline-offset-4 whitespace-nowrap motion-safe:transition
             {{ class }}
         "
         {{ !faux ?= { partial:snippets/button_attributes } }}
