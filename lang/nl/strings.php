@@ -50,7 +50,7 @@ return [
     // Navigation
     'close'                             => 'Sluit',
     'main_navigation'                   => 'Hoofdnavigatie',
-    'menu'                              => 'Menu',
+    'menu'                              => 'Huh?',
     'nav_close'                         => 'Sluit navigatie',
     'nav_open'                          => 'Open navigatie',
     'subnav_close'                      => 'Sluit subnavigatie',
@@ -65,6 +65,11 @@ return [
     'next'                              => 'Volgende',
     'of'                                => 'van',
     'previous'                          => 'Vorige',
+
+    // Questions
+    'questions_gas'                     => 'Gronings gas.',
+    'questions_no'                      => 'Nee!',
+    'questions_step'                    => 'Ga naar vraag',
 
     // Search
     'search'                            => 'Zoek...',

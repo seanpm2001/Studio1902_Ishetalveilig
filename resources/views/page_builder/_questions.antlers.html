@@ -1,0 +1,69 @@
+{{#
+	@name Questions
+	@desc The Questions page builder block.
+    @set page.page_builder.questions
+#}}
+
+<!-- /page_builder/_questions.antlers.html -->
+<div x-data="{ index: 0 }">
+    <nav class="fixed z-40 top-8 right-8">
+        <ul class="flex flex-col space-y-2">
+            {{ block:questions }}
+                <li>
+                    <a
+                        class="block w-5 h-5 rounded-full bg-white hover:bg-primary border border-primary"
+                        :class="{
+                            'bg-primary': index == {{ index }},
+                            'bg-white hover:bg-primary': index != {{ index}}
+                        }"
+                        href="#{{ title | slugify }}"
+                        aria-label="{{ trans:strings.questions_step }} {{ count }}">
+                    </a>
+                </li>
+            {{ /block:questions }}
+        </ul>
+    </nav>
+
+    <div
+        class="fixed top-1/2 z-20 fluid-container font-title text-[20rem] text-neutral uppercase leading-none -translate-y-1/2"
+        aria-hidden="true"
+    >
+        {{ trans:strings.questions_no }}
+    </div>
+
+    {{ block:questions }}
+        <section class="relative w-full h-screen" id="{{ title | slugify }}">
+            <article class="relative z-30 fluid-container h-full py-4 flex flex-col justify-between">
+                <div class="flex">
+                    <div class="flex p-6 bg-white/80 backdrop-blur-xl  rounded-lg">
+                        <div class="w-16 text-neutral/30 text-3xl">{{ count }}/{{ total_results }}</div>
+                        {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary font-light" }}
+                    </div>
+                </div>
+                <span class="invisible">{{ trans:strings.questions_no }}</span>
+                <div class="ml-16 p-6 max-w-[30rem] bg-white/80 backdrop-blur-xl rounded-lg text-neutral text-lg">
+                    {{ text }}
+                </div>
+            </article>
+
+            <div
+                x-data="{ visible: false }"
+                x-intersect:enter.full="
+                    visible = true,
+                    index = {{ index }},
+                    history.pushState({}, '', '#{{ title | slugify }}')"
+                "
+                x-intersect:leave="visible = false"
+                :class="{
+                    '[clip-path:polygon(0_0,_0_0,_0_100%,_0%_100%)]': !visible,
+                    '[clip-path:polygon(100%_0,_0_0,_0_100%,_100%_100%)]': visible
+                }"
+                class="absolute z-10 inset-x-0 top-1/2 -translate-y-1/2 transition-[clip-path] duration-[1600ms] "
+            >
+                {{ svg:crack class="w-full h-auto opacity-50" }}
+                {{# {switch between="rotate-0 | rotate-45" } #}}
+            </div>
+        </section>
+    {{ /block:questions }}
+</div>
+<!-- End: /page_builder/_questions.antlers.html -->
