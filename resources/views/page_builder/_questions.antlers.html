@@ -7,7 +7,7 @@
 <!-- /page_builder/_questions.antlers.html -->
 <div class="relative w-full flex items-start" x-data="{ index: 0 }">
     <div
-        class="fixed top-1/2 z-20 fluid-container font-title text-[20rem] text-neutral uppercase leading-none -translate-y-1/2"
+        class="fixed top-1/3 md:top-1/2 z-20 fluid-container font-title text-[10rem] lg:text-[20rem] text-neutral uppercase leading-none md:-translate-y-1/2"
         aria-hidden="true"
     >
         {{ trans:strings.questions_no }}
@@ -18,14 +18,14 @@
             <section class="relative w-full h-screen snap-center" id="{{ title | slugify }}">
                 <article class="relative z-30 fluid-container h-full py-6 flex flex-col justify-between">
                     <div class="flex">
-                        <div class="flex p-6 bg-white/90 backdrop-blur-xl  rounded-lg">
-                            <div class="w-16 text-neutral/30 text-3xl">{{ count }}/{{ total_results }}</div>
+                        <div class="flex flex-col md:flex-row -m-4 md:m-0  p-6 bg-white/90 backdrop-blur-xl rounded-lg">
+                            <div class="w-16 mb-4 md:mb-0 text-neutral/30 text-2xl md:text-3xl">{{ count }}/{{ total_results }}</div>
                             {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary font-light" }}
                         </div>
                     </div>
-                    <span class="invisible">{{ trans:strings.questions_no }}</span>
-                    <div class="ml-16 p-6 max-w-[30rem] bg-white/90 backdrop-blur-xl rounded-lg">
-                        {{ partial:typography/prose as="div" class="prose-lg mb-6" }}
+                    <span class="sr-only">{{ trans:strings.questions_no }}</span>
+                    <div class="md:ml-16 -m-4 md:m-0 p-6 max-w-[30rem] bg-white/90 backdrop-blur-xl rounded-lg">
+                        {{ partial:typography/prose as="div" class="md:prose-lg mb-6" }}
                             {{ text }}
                         {{ /partial:typography/prose }}
                         {{ partial:components/buttons }}
