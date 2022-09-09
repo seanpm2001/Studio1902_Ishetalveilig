@@ -62,6 +62,7 @@
                             'bg-primary': index == {{ index }},
                             'bg-white hover:bg-primary': index != {{ index}}
                         }"
+                        @click.prevent="document.querySelector('#{{ title | slugify }}').scrollIntoView({behavior: 'smooth'})"
                         href="#{{ title | slugify }}"
                         aria-label="{{ trans:strings.questions_step }} {{ count }}">
                     </a>
