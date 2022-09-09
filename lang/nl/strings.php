@@ -60,6 +60,7 @@ return [
     // Other
     'no_results'                        => 'Er zijn momenteel geen resultaten.',
     'no_script'                         => 'Deze website vereist Javascript om sommige onderdelen goed te laten functioneren.',
+    'share'                             => 'Deel',
 
     // Pagination
     'next'                              => 'Volgende',

@@ -73,8 +73,8 @@ fields:
       container: assets
       target_blank: false
       reading_time: false
-      fullscreen: true
-      allow_source: true
+      fullscreen: false
+      allow_source: false
       type: bard
       replicator_preview: false
       localizable: true

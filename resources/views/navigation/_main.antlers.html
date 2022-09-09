@@ -11,7 +11,7 @@
 >
     <div class="fixed z-50 bottom-0 right-0 mr-8 mb-safe flex space-x-4">
         <button
-            {{# x-show="navigator.share" #}}
+            x-show="navigator.share"
             @click="
                 navigator.share({
                     title: document.title,
@@ -19,7 +19,7 @@
                 })
             "
             class="w-16 flex items-center justify-center py-2 rounded-full bg-secondary text-white focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
-        >Deel</button>
+        >{{ trans:strings.share }}</button>
         <button
             @click.prevent="mobileNavOpen = !mobileNavOpen"
             class="w-16 flex items-center justify-center py-2 rounded-full focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
