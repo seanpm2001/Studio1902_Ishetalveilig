@@ -9,7 +9,7 @@
     aria-label="{{ trans:strings.main_navigation }}"
     x-cloak
 >
-    <div class="fixed z-50 bottom-0 right-0 mr-8 mb-safe flex space-x-4">
+    <div class="fixed z-50 bottom-0 right-0 mr-8 mb-safe flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
         <button
             x-show="navigator.share"
             @click="
