@@ -22,7 +22,6 @@ fields:
       width: 33
       listable: hidden
       instructions_position: above
-      read_only: false
   -
     handle: link_type
     field:
@@ -151,3 +150,14 @@ fields:
       replicator_preview: false
       if:
         show_controls: 'equals true'
+  -
+    handle: hover_image
+    field: common.image
+    config:
+      display: 'Hover image'
+      width: 50
+      folder: link-images
+      if:
+        link_type: 'equals url'
+        show_controls: 'equals true'
+        target_blank: 'equals true'

@@ -50,6 +50,11 @@ return [
             'collection' => 'pages',
             'width' => 50
         ],
+        [
+            'type' => 'collection',
+            'collection' => 'questions',
+            'width' => 50
+        ],
     ],
 
     /*

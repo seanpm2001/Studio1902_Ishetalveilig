@@ -13,12 +13,19 @@
     <{{ as or 'a' }}
         {{ slot:attributes }}
         class="
-            font-bold focus:outline-none focus-visible:ring focus-visible:ring-offset-2 text-primary focus-visible:ring-primary leading-none underline decoration-wavy decoration-2 underline-offset-4 whitespace-nowrap motion-safe:transition
+            relative font-bold focus:outline-none focus-visible:ring focus-visible:ring-offset-2 text-primary focus-visible:ring-primary leading-none underline decoration-wavy decoration-2 underline-offset-4 whitespace-nowrap motion-safe:transition group
             {{ class }}
         "
         {{ !faux ?= { partial:snippets/button_attributes } }}
     >
         {{ link_type == 'email' ? { label | obfuscate_email } : label }}
+        {{ if link_type == 'url' && target_blank }}
+            <figure
+                class="opacity-0 absolute w-40 border border-neutral bottom-8 left-1/2 -translate-x-1/2 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all pointer-events-none shadow-flat"
+            >
+                {{ partial:components/picture :image="hover_image" class="" sizes="20vw" lazy="true" }}
+            </figure>
+        {{ /if }}
     </{{ as or 'a' }}>
 {{ /if }}
 <!-- End: /components/_button.antlers.html -->

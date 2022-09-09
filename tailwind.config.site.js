@@ -25,6 +25,9 @@ module.exports = {
       secondary: '#CF5F1E'
     },
     extend: {
+      boxShadow: ({theme}) => ({
+        'flat': `6px 6px 0px 0px ${theme('colors.primary')}`,
+      }),
       // Set default transition durations and easing when using the transition utilities.
       transitionDuration: {
         DEFAULT: '300ms',
@@ -71,7 +74,7 @@ module.exports = {
           },
         },
         'html': {
-            color: theme('colors.neutral.DEFAULT'),
+            color: theme('colors.neutral'),
             //--------------------------------------------------------------------------
             // Set sans, serif or mono stack with optional custom font as default.
             //--------------------------------------------------------------------------
