@@ -17,7 +17,8 @@
         {{ block:questions }}
             <section class="relative w-full h-screen snap-start" id="{{ title | slugify }}">
                 <article
-                    x-intersect:enter.full="
+                    x-intersect:enter="
+                        console.log('ja'),
                         index = {{ index }},
                         history.pushState({}, '', '#{{ title | slugify }}')"
                     "
