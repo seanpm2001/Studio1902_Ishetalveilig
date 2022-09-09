@@ -35,13 +35,13 @@
         <section class="relative w-full h-screen" id="{{ title | slugify }}">
             <article class="relative z-30 fluid-container h-full py-6 flex flex-col justify-between">
                 <div class="flex">
-                    <div class="flex p-6 bg-white/80 backdrop-blur-xl  rounded-lg">
+                    <div class="flex p-6 bg-white/90 backdrop-blur-xl  rounded-lg">
                         <div class="w-16 text-neutral/30 text-3xl">{{ count }}/{{ total_results }}</div>
                         {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary font-light" }}
                     </div>
                 </div>
                 <span class="invisible">{{ trans:strings.questions_no }}</span>
-                <div class="ml-16 p-6 max-w-[30rem] bg-white/80 backdrop-blur-xl rounded-lg">
+                <div class="ml-16 p-6 max-w-[30rem] bg-white/90 backdrop-blur-xl rounded-lg">
                     {{ partial:typography/prose as="div" class="prose-lg mb-6" }}
                         {{ text }}
                     {{ /partial:typography/prose }}

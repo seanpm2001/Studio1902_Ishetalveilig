@@ -10,6 +10,17 @@
     x-cloak
 >
     <button
+        x-show="navigator.share"
+        @click="
+            navigator.share({
+                title: document.title,
+                text: window.location.href,
+                url: window.location.href
+            })
+        "
+        class="fixed bottom-0 right-0 w-16 z-50 flex items-center justify-center py-2 rounded-full mr-32 mb-safe bg-secondary text-white focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
+    >Deel</button>
+    <button
         @click.prevent="mobileNavOpen = !mobileNavOpen"
         class="fixed bottom-0 right-0 w-16 z-50 flex items-center justify-center py-2 rounded-full mr-8 mb-safe focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
         :class="{ 'bg-primary text-white': !mobileNavOpen, 'bg-white text-primary': mobileNavOpen }"
