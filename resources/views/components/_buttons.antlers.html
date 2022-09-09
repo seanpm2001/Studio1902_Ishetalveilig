@@ -16,7 +16,7 @@
         </div>
     {{ else }}
         {{# The styling when called from any other partial or template. #}}
-        <div class="flex flex-wrap gap-3 {{ class }}">
+        <div class="flex flex-wrap gap-x-3 gap-y-6 {{ class }}">
             {{ buttons }}
                 {{ partial:components/button :inverted="inverted" }}
             {{ /buttons }}
