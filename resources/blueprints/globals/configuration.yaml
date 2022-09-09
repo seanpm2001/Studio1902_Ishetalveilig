@@ -3,6 +3,27 @@ sections:
     display: General
     fields:
       -
+        handle: section_navigation
+        field:
+          type: section
+          listable: hidden
+          display: Navigation
+          instructions: 'Set the navigation content.'
+      -
+        handle: navigation_content
+        field: common.text_basic
+        config:
+          buttons:
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - anchor
+          display: 'Navigation content'
+          validate:
+            - required
+      -
         handle: error_pages
         field:
           type: section
