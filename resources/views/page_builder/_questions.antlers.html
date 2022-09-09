@@ -53,11 +53,11 @@
     </div>
 
     <nav class="sticky z-40 top-6 pt-2 pr-8">
-        <ul class="flex flex-col space-y-2">
+        <ul class="flex flex-col space-y-4 md:space-y-2">
             {{ block:questions }}
                 <li>
                     <a
-                        class="block w-6 h-6 rounded-full bg-white hover:bg-primary border border-primary transition-colors"
+                        class="block w-6 h-6 md:w-5 md:h-5 rounded-full bg-white hover:bg-primary border border-primary transition-colors"
                         :class="{
                             'bg-primary': index == {{ index }},
                             'bg-white hover:bg-primary': index != {{ index}}

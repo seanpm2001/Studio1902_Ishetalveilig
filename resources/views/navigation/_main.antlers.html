@@ -18,12 +18,12 @@
                     url: window.location.href
                 })
             "
-            class="w-16 flex items-center justify-center py-2 rounded-full bg-secondary text-white focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
+            class="w-16 flex items-center justify-center py-2 rounded-full bg-secondary hover:bg-primary text-white focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
         >{{ trans:strings.share }}</button>
         <button
             @click.prevent="navOpen = !navOpen"
-            class="w-16 flex items-center justify-center py-2 rounded-full focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
-            :class="{ 'bg-primary text-white': !navOpen, 'bg-white text-primary': navOpen }"
+            class="w-16 flex items-center justify-center py-2 rounded-full focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2 transition"
+            :class="{ 'bg-primary hover:bg-secondary text-white': !navOpen, 'bg-white hover:bg-secondary text-primary hover:text-white': navOpen }"
             :aria-label="
             navOpen
                 ? '{{ trans:strings.nav_close }}'
@@ -43,7 +43,7 @@
     >
         <div class="fluid-container">
             <div class="md:ml-16">
-                {{ partial:typography/h1 content="Wat is dit?" color="text-white" class="font-light" }}
+                {{ partial:typography/h1 content="{trans:strings.what_is_this}" color="text-white" }}
             </div>
             <span class="font-title text-[8rem] lg:text-[20rem] text-neutral uppercase leading-none" aria-hidden="true">{{ trans:strings.what }}</span>
             {{ partial:typography/prose_white as="div" class="prose-lg mb-12 md:ml-16 !max-w-[35ch]" }}
