@@ -37,15 +37,16 @@
     <div
         class="fixed inset-0 z-[45] pt-12 bg-primary overflow-auto"
         x-show="navOpen"
+        @keydown.window.prevent.esc="navOpen = false"
         x-transition
         x-trap.inert.noscroll="navOpen"
     >
         <div class="fluid-container">
-            <div class="pl-16">
+            <div class="md:ml-16">
                 {{ partial:typography/h1 content="Wat is dit?" color="text-white" class="font-light" }}
             </div>
-            <span class="font-title text-[20rem] text-neutral uppercase leading-none" aria-hidden="true">{{ trans:strings.what }}</span>
-            {{ partial:typography/prose_white as="div" class="prose-lg mb-12 ml-16 max-w-[35ch]" }}
+            <span class="font-title text-[8rem] lg:text-[20rem] text-neutral uppercase leading-none" aria-hidden="true">{{ trans:strings.what }}</span>
+            {{ partial:typography/prose_white as="div" class="prose-lg mb-12 md:ml-16 !max-w-[35ch]" }}
                 {{ configuration:navigation_content }}
             {{ /partial:typography/prose_white }}
             </div>
