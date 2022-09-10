@@ -34,10 +34,10 @@
 
                 <div
                     x-data="{ visible: false }"
-                    x-intersect:enter.full="
+                    x-intersect:enter="
                         visible = true,
                         index = {{ index }},
-                        $nextTick(() => { history.pushState({}, '', '#{{ title | slugify }}')})"
+                        history.pushState({}, '', '#{{ title | slugify }}')
                     "
                     x-intersect:leave="visible = false"
                     :class="{
