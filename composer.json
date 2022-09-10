@@ -59,7 +59,6 @@
     "scripts": {
         "build": [
             "npm run production",
-            "@php artisan key:generate",
             "@php please ssg:generate"
         ],
         "pre-update-cmd": [
