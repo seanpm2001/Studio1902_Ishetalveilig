@@ -81,12 +81,11 @@ STATAMIC_CUSTOM_LOGO_OUTSIDE_URL='/visuals/nee.svg'
 ### Production
 
 ```env
-Dump your .env values here with sensitive data removed. The following is a production example that uses full static caching:
-APP_NAME='Statamic Peak'
+APP_NAME='Is het al veilig?'
 APP_ENV=production
 APP_KEY=
 APP_DEBUG=false
-APP_URL=
+APP_URL=https://ishetalveilig.nl
 
 DEBUGBAR_ENABLED=false
 
@@ -109,7 +108,7 @@ MAIL_PORT=587
 MAIL_ENCRYPTION=tls
 MAIL_USERNAME=
 MAIL_PASSWORD=
-MAIL_FROM_ADDRESS=
+MAIL_FROM_ADDRESS=noreply@ishetalveilig.nl
 MAIL_FROM_NAME="${APP_NAME}"
 
 PUSHER_APP_ID=
@@ -143,7 +142,7 @@ STATAMIC_STACHE_WATCHER=false
 STATAMIC_CACHE_TAGS_ENABLED=true
 
 #STATAMIC_CUSTOM_CMS_NAME=
-STATAMIC_CUSTOM_LOGO_OUTSIDE_URL='/visuals/client-logo.svg'
+STATAMIC_CUSTOM_LOGO_OUTSIDE_URL='/visuals/nee.svg'
 #STATAMIC_CUSTOM_LOGO_NAV_URL=
 #STATAMIC_CUSTOM_FAVICON_URL=
 #STATAMIC_CUSTOM_CSS_URL=
@@ -226,3 +225,8 @@ $FORGE_PHP artisan statamic:assets:generate-presets --queue
 ( flock -w 10 9 || exit 1
     echo 'Restarting FPM...'; sudo -S service $FORGE_PHP_FPM reload ) 9>/tmp/fpmlock
 ```
+
+Copyright 2022 - Studio 1902
+Peak is open source.
+Statamic is closed source.
+Project design and content is protected under copyright.
