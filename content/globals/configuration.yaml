@@ -6,13 +6,13 @@ data:
       content:
         -
           type: text
-          text: 'Informatie over dit project. Waarom is het nodig, wat kun jij doen.'
+          text: 'Veel mensen denken onterecht dat het openzetten van de Groningse gaskraan alle huidige energieproblemen oplost. Men baseert zich echter niet op de feiten. Er wordt veel geroepen en weinig tot geen rekening gehouden met de veiligheid van Groningers. '
     -
       type: paragraph
       content:
         -
           type: text
-          text: 'Wie droeg er aan bij, Merkactivisten en Studio1902 en naam van alle andere toppers.'
+          text: 'Jouke, Lisa en Rob willen graag de juiste informatie vertellen. '
   error_404_entry: 059d4d8d-fc60-49f8-8823-7da10549e84e
   copyright_since: 2022
   copyright_name: 'Merkactivisten & Studio 1902'
