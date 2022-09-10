@@ -20,6 +20,20 @@
 [context.production.environment]
   #PHP_VERSION="8.0"
 
+[build.staging]
+  APP_DEBUG = "false"
+  APP_ENV = "staging"
+  APP_KEY = "base64:sv/WnEgkV2Mvp2ofr6CkvX8MYsFUx4SRDpmAjH0VZHI="
+  APP_NAME = "Is het al Veilig?"
+  APP_URL = "https://ishetalveilig.netlify.app"
+
+[build.production]
+  APP_DEBUG = "false"
+  APP_ENV = "production"
+  APP_KEY = "base64:sv/WnEgkV2Mvp2ofr6CkvX8MYsFUx4SRDpmAjH0VZHI="
+  APP_NAME = "Is het al Veilig?"
+  APP_URL = "https://ishetalveilig.nl"
+
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
