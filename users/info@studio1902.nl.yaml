@@ -2,3 +2,7 @@ name: 'Rob de Kort'
 super: true
 id: 67345c5a-fd3b-4628-977e-291fddd3ba07
 password_hash: $2y$10$W7c1uGBLeaq2lqa0dwu81eMVHVZNbzYDKKn/aGe6eOXrK4gQdwI4O
+preferences:
+  collections:
+    questions:
+      after_save: continue_editing
