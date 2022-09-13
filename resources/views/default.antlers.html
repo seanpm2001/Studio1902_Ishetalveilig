@@ -16,12 +16,12 @@
             ? percentage = 100
             : percentage = index * 100 / {{ questions | count | subtract(1) }}
     "
-    class="h-screen overflow-hidden snap-y snap-mandatory"
+    class="h-screen h-[100dvh] overflow-hidden snap-y snap-mandatory"
     x-cloak
 >
     {{ questions }}
         <section
-            class="relative z-10 h-full pt-6 pb-safe snap-start snap-always"
+            class="relative z-10 h-full py-8 snap-start snap-always"
             id="{{ title | slugify }}"
         >
             <article
@@ -33,7 +33,7 @@
                     {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary" }}
                 </div>
                 <span class="sr-only">{{ trans:strings.questions_no }}</span>
-                <div class="md:ml-16 max-w-[70ch]">
+                <div class="md:ml-16 max-w-[70ch] pb-8">
                     {{ partial:typography/prose as="div" class="md:prose-lg mb-6" }}
                         {{ text }}
                     {{ /partial:typography/prose }}
@@ -69,7 +69,7 @@
         </ul>
     </nav>
 
-    <nav class="fixed z-50 bottom-0 right-8 mb-safe flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+    <nav class="fixed z-50 bottom-8 right-8 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
         <button
             x-show="navigator.share"
             @click="
