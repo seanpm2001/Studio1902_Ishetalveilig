@@ -4,8 +4,11 @@
 #}}
 
 <!-- /layout/_header.antlers.html -->
-<header>
-    {{# Make partials you want to use for the header or use and edit premade examples like the following ones. #}}
-    {{ partial:navigation/main }}
+<header class="w-full py-4">
+    <div class="fluid-container flex justify-between items-center">
+        {{# Make partials you want to use for the header or use and edit premade examples like the following ones. #}}
+        {{ partial:components/logo width="120" }}
+        {{ partial:navigation/main }}
+    </div>
 </header>
 <!-- End: /layout/_header.antlers.html -->

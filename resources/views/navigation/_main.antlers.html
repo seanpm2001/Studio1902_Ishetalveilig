@@ -3,53 +3,8 @@
 	@desc The sites main navigation rendered on each page. There's a desktop and a mobile version.
 #}}
 
-<nav
-    x-data="{ navOpen: false }"
-    class=""
-    aria-label="{{ trans:strings.main_navigation }}"
-    x-cloak
->
-    <div class="fixed z-50 bottom-0 right-0 mr-8 mb-safe flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-        <button
-            x-show="navigator.share"
-            @click="
-                navigator.share({
-                    title: document.title,
-                    url: window.location.href
-                })
-            "
-            class="w-16 flex items-center justify-center py-2 rounded-full bg-secondary hover:bg-primary text-white focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
-        >{{ trans:strings.share }}</button>
-        <button
-            @click.prevent="navOpen = !navOpen"
-            class="w-16 flex items-center justify-center py-2 rounded-full focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2 transition"
-            :class="{ 'bg-primary hover:bg-secondary text-white': !navOpen, 'bg-white hover:bg-secondary text-primary hover:text-white': navOpen }"
-            :aria-label="
-            navOpen
-                ? '{{ trans:strings.nav_close }}'
-                : '{{ trans:strings.nav_open }}'
-            "
-            :aria-expanded="navOpen"
-            x-text="navOpen ? '{{ trans:strings.close }}' : '{{ trans:strings.menu }}'"
-        ></button>
-    </div>
+{{# The desktop navigation. Hidden on smaller screen. Shown from md and up. #}}
+{{ partial:navigation/main_desktop }}
 
-    <div
-        class="fixed inset-0 z-[45] pt-12 bg-primary overflow-auto"
-        x-show="navOpen"
-        @keydown.window.prevent.esc="navOpen = false"
-        x-transition
-        x-trap.inert.noscroll="navOpen"
-    >
-        <div class="fluid-container">
-            <div class="md:ml-16">
-                {{ partial:typography/h1 content="{trans:strings.what_is_this}" color="text-white" }}
-            </div>
-            <span class="font-title text-[8rem] lg:text-[20rem] text-neutral uppercase leading-none" aria-hidden="true">{{ trans:strings.what }}</span>
-            {{ partial:typography/prose_white as="div" class="prose-lg mb-12 md:ml-16 !max-w-[35ch]" }}
-                {{ configuration:navigation_content }}
-            {{ /partial:typography/prose_white }}
-            </div>
-        </div>
-    </div>
-</nav>
+{{# The mobile navigation. Hidden from md and up #}}
+{{ partial:navigation/main_mobile }}

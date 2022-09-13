@@ -5,7 +5,7 @@
 
 <!-- /layout.antlers.html -->
 <!doctype html>
-<html lang="{{ site:short_locale }}" class="scroll-smooth">
+<html lang="{{ site:short_locale }}">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,14 +14,10 @@
         {{ partial:snippets/seo }}
         {{ partial:snippets/browser_appearance }}
     </head>
-    <body class="min-h-screen bg-white snap-y snap-mandatory selection:bg-primary selection:text-white">
+    <body class="min-h-screen bg-white selection:bg-primary selection:text-white overflow-hidden">
         {{ partial:snippets/noscript }}
-        {{ partial:navigation/skip_to_content }}
-        {{ partial:components/toolbar }}
         {{ yield:seo_body }}
-        {{ partial:layout/header }}
         {{ template_content }}
-        {{ partial:layout/footer }}
     </body>
 </html>
 <!-- End: /layout.antlers.html -->

@@ -14,7 +14,8 @@
     "@alpinejs/intersect": "^3.10.3",
     "@alpinejs/persist": "^3.10.3",
     "alpinejs": "^3.10.3",
-    "focus-visible": "^5.2.0"
+    "focus-visible": "^5.2.0",
+    "gsap": "^3.11.1"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

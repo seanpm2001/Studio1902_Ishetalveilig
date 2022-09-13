@@ -72,6 +72,7 @@ return [
 
     // Questions
     'questions_gas'                     => 'Gronings gas.',
+    'questions_next'                    => 'Volgende',
     'questions_no'                      => 'Nee!',
     'questions_step'                    => 'Ga naar vraag',
 

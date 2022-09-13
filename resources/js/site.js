@@ -4,6 +4,7 @@ import intersect from '@alpinejs/intersect'
 import persist from '@alpinejs/persist'
 import focus from '@alpinejs/focus'
 import 'focus-visible'
+import { gsap } from "gsap";
 
 // Global get CSRF token function (used by forms).
 window.getToken = async () => {
@@ -16,6 +17,9 @@ window.getToken = async () => {
             this.error = 'Something went wrong. Please try again later.'
         })
 }
+
+// Init GreenSock.
+window.gsap = gsap
 
 // Call Alpine.
 window.Alpine = Alpine

@@ -4,9 +4,106 @@
 #}}
 
 <!-- /default.antlers.html -->
-<main id="content">
-    {{ page_builder scope="block" }}
-        {{ partial src="page_builder/{type}" }}
-    {{ /page_builder }}
+<main
+    x-data="{
+        index: 0,
+        percentage: 0,
+        finished: false
+    }"
+    x-effect="
+        (index == {{ questions | count | subtract(1) }}) && (finished = true),
+        finished == true
+            ? percentage = 100
+            : percentage = index * 100 / {{ questions | count | subtract(1) }}
+    "
+    class="h-screen overflow-hidden snap-y snap-mandatory"
+    x-cloak
+>
+    {{ questions }}
+        <section
+            class="relative z-10 h-full pt-6 pb-safe snap-start snap-always"
+            id="{{ title | slugify }}"
+        >
+            <article
+                x-intersect:full="index = {{ index }}"
+                class="fluid-container h-full flex flex-col justify-between"
+            >
+                <div class="flex flex-col md:flex-row pr-12">
+                    <div class="flex-shrink-0 w-16 mb-4 md:mb-0 text-neutral/30 text-2xl md:text-3xl">{{ count }}/{{ total_results }}</div>
+                    {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary" }}
+                </div>
+                <span class="sr-only">{{ trans:strings.questions_no }}</span>
+                <div class="md:ml-16 max-w-[70ch]">
+                    {{ partial:typography/prose as="div" class="md:prose-lg mb-6" }}
+                        {{ text }}
+                    {{ /partial:typography/prose }}
+                    {{ partial:components/buttons }}
+                </div>
+            </article>
+        </section>
+    {{ /questions }}
+
+    <nav class="fixed z-10 top-8 right-8">
+        <ul class="flex flex-col space-y-4 md:space-y-2">
+            {{ questions }}
+                <li>
+                    <a
+                        class="block w-5 h-5 rounded-full bg-white border border-primary transition"
+                        :class="{
+                            'border-white': index == {{ index}},
+                            'hover:bg-primary': index != {{ index}}
+                        }"
+                        @click.prevent="document.querySelectorAll('section')[{{ index }}].scrollIntoView({behavior: 'smooth'})"
+                        aria-label="{{ trans:strings.questions_step }} {{ count }}"
+                    >
+                        <div
+                            x-show="index == {{ index }}"
+                            x-transition.scale.70.opacity.duration.400ms
+                            aria-hidden="true"
+                        >
+                            {{ svg:cross class="w-[1.1rem] h-[1.1rem] stroke-primary" }}
+                        </div>
+                    </a>
+                </li>
+            {{ /questions }}
+        </ul>
+    </nav>
+
+    <nav class="fixed z-50 bottom-0 right-8 mb-safe flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+        <button
+            x-show="navigator.share"
+            @click="
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                })
+            "
+            class="flex items-center justify-center py-2 px-3 rounded-full bg-secondary hover:bg-primary text-white focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
+        >{{ trans:strings.share }}</button>
+        <button
+            @click.prevent="index === {{ questions | count | subtract(1) }} ? index = 0 : index++, document.querySelectorAll('section')[index].scrollIntoView({behavior: 'smooth'})"
+            class="flex items-center justify-center py-2 px-3 bg-primary hover:bg-secondary text-white rounded-full focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2 transition"
+        >{{ trans:strings.questions_next }}</button>
+    </nav>
+
+    <div class="fixed inset-x-0 top-[30vh] md:top-[20vh]" aria-hidden="true">
+        <div class="relative fluid-container font-title text-[10rem] md:text-[15rem] lg:text-[18rem] text-neutral uppercase leading-none">
+            {{ trans:strings.questions_no }}
+        </div>
+        <div
+            x-ref="crack"
+            class="absolute z-behind top-0 inset-x-0 opacity-30 [clip-path:polygon(0_0,_0_0,_0_100%,_0_100%)]"
+            x-effect="
+                gsap.to($refs.crack, {
+                    clipPath: `polygon(0% 0%, ${percentage}% 0%, ${percentage}% 100%, 0% 100%)`,
+                    ease: 'rough',
+                    duration: .4,
+                })
+            "
+        >
+            <img src="/visuals/crack-01.jpg" alt="" aria-hidden="true" class="w-full h-auto">
+        </div>
+
+    </div>
 </main>
 <!-- End: /default.antlers.html -->
