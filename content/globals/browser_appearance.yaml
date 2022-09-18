@@ -4,8 +4,9 @@ data:
   disable_email_detection: false
   disable_address_detection: false
   use_theme_color: true
-  use_theme_color_dark_mode: false
+  use_theme_color_dark_mode: true
   theme_color: '#FFFFFF'
+  theme_color_dark_mode: '#414036'
   apple_mobile_web_app: false
   android_mobile_web_app: false
   use_favicons: true
