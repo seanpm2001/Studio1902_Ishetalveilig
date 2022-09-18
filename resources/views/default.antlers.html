@@ -82,10 +82,10 @@
         >{{ trans:strings.share }}</button>
     </nav>
 
-    <div class="fixed inset-x-0 top-[30vh] md:top-[20vh]" aria-hidden="true">
+    <div class="fixed inset-0" aria-hidden="true">
         <div
             x-ref="crack"
-            class="absolute z-behind top-0 inset-x-0 opacity-30 [clip-path:polygon(0_0,_0_0,_0_100%,_0_100%)]"
+            class="absolute z-behind top-[35vh] inset-x-0 opacity-30 [clip-path:polygon(0_0,_0_0,_0_100%,_0_100%)]"
             x-effect="
                 gsap.to($refs.crack, {
                     clipPath: `polygon(0% 0%, ${percentage}% 0%, ${percentage}% 100%, 0% 100%)`,
@@ -94,8 +94,9 @@
                 })
             "
         >
-            <img src="/visuals/crack-01.jpg" alt="" aria-hidden="true" class="w-full h-auto">
+            {{ svg:crack alt="" aria-hidden="true" class="w-full h-auto" }}
         </div>
+        {{ svg:corner_crack alt="" aria-hidden="true" class="absolute top-0 right-0 w-1/3 h-auto opacity-20" }}
     </div>
 </main>
 <!-- End: /default.antlers.html -->
