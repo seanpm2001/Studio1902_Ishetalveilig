@@ -53,32 +53,38 @@
             {{ /once }}
             <div
                 class="flex flex-col md:flex-row pr-12 transition duration-1000"
-                x-data="{ visible: false }"
-                x-intersect:half="visible = true"
-                x-intersect:leave="visible = false"
-                :class="{ 'opacity-100 translate-y-0': visible, 'opacity-0 translate-y-8': !visible }"
-                x-cloak
+                {{ unless first }}
+                    x-data="{ visible: false }"
+                    x-intersect:half="visible = true"
+                    x-intersect:leave="visible = false"
+                    :class="{ 'opacity-100 translate-y-0': visible, 'opacity-0 translate-y-4': !visible }"
+                    x-cloak
+                {{ /unless }}
             >
                 <div class="flex-shrink-0 w-24 pr-3 mb-4 md:mb-0 md:text-right text-neutral/30 text-2xl md:text-4xl leading-tight select-none">{{ count }}/{{ total_results }}</div>
                 {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary" }}
             </div>
             <div
                 class="font-title text-[40vw] md:text-[15rem] lg:text-[18rem] text-neutral uppercase leading-none -rotate-3 transition duration-1000"
-                x-data="{ visible: false }"
-                x-intersect:full="visible = true"
-                x-intersect:leave="visible = false"
-                :class="{ 'opacity-100 scale-100 translate-x-0': visible, 'opacity-0 scale-110 translate-x-8': !visible }"
-                x-cloak
+                {{ unless first }}
+                    x-data="{ visible: false }"
+                    x-intersect:full="visible = true"
+                    x-intersect:leave="visible = false"
+                    :class="{ 'opacity-100 scale-100 translate-x-0': visible, 'opacity-0 scale-110 translate-x-4': !visible }"
+                    x-cloak
+                {{ /unless }}
             >
                 {{ trans:strings.questions_no }}
             </div>
             <div
-                x-data="{ visible: false }"
-                x-intersect:half="visible = true, index = {{ index }}, history.pushState({}, '', '#{{ title | slugify }}')"
-                x-intersect:leave="visible = false"
-                :class="{ 'opacity-100 translate-y-0': visible, 'opacity-0 translate-y-8': !visible }"
-                x-cloak
                 class="md:ml-24 max-w-[70ch] pr-8 mt-12 transition duration-1000"
+                {{ unless first }}
+                    x-data="{ visible: false }"
+                    x-intersect:half="visible = true, index = {{ index }}, history.pushState({}, '', '#{{ title | slugify }}')"
+                    x-intersect:leave="visible = false"
+                    :class="{ 'opacity-100 translate-y-0': visible, 'opacity-0 translate-y-4': !visible }"
+                    x-cloak
+                {{ /unless }}
             >
                 {{ partial:typography/prose as="div" class="md:prose-lg mb-6" }}
                     {{ text }}
