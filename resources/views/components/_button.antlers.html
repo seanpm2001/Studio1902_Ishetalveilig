@@ -22,6 +22,7 @@
         {{ if link_type == 'url' && target_blank }}
             <figure
                 class="opacity-0 absolute w-40 border border-neutral bottom-8 left-1/2 -translate-x-1/2 translate-y-2 blur-lg group-hover:blur-none group-hover:opacity-100 group-hover:translate-y-0 transition pointer-events-none shadow-flat"
+                aria-hidden="true"
             >
                 {{ partial:components/picture :image="hover_image" class="" sizes="20vw" lazy="true" }}
             </figure>

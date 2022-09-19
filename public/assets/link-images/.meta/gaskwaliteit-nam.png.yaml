@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Gaskwaliteit van de NAM'
 size: 979577
 last_modified: 1663492491
 width: 1814
