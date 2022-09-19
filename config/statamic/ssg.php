@@ -42,6 +42,7 @@ return [
         public_path('assets') => 'assets',
         public_path('build') => 'build',
         public_path('favicons') => 'favicons',
+        public_path('_headers') => '_headers',
         public_path('social_images') => 'social_images',
         public_path('visuals') => 'visuals',
     ],
