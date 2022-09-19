@@ -11,8 +11,8 @@ sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 seo_title: 'Is het al veilig?'
 seo_description: 'Nee. Meer gas winnen in Groningen is sowieso niet veilig tot en met 2028. Dit zegt het huidige versterkingsplan, dat gebaseerd is op afbouw.'
-og_image: home-og-1662666294.png
-twitter_image: home-twitter-1662666294.png
+og_image: home-og-1663618151.png
+twitter_image: home-twitter-1663618151.png
 questions:
   - 207388fc-d45a-4344-ad81-37351a1029b7
   - c773767f-a057-4ffb-a4ab-550baf95597b
