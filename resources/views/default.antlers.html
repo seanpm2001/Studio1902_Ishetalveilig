@@ -20,19 +20,19 @@
 >
     {{ questions }}
         <article
-            class="fluid-container h-auto min-h-screen relative z-10 py-8 flex flex-col justify-between"
+            class="fluid-container h-auto min-h-screen relative z-10 py-8 flex flex-col"
             id="{{ title | slugify }}"
         >
             <div class="flex flex-col md:flex-row pr-12">
                 <div class="flex-shrink-0 w-24 pr-3 mb-4 md:mb-0 md:text-right text-neutral/30 text-2xl md:text-4xl leading-tight">{{ count }}/{{ total_results }}</div>
                 {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary" }}
             </div>
-            <div class="font-title text-[9rem] md:text-[15rem] lg:text-[18rem] text-neutral uppercase leading-none">
+            <div class="font-title text-[40vw] md:text-[15rem] lg:text-[18rem] text-neutral uppercase leading-none -rotate-3">
                 {{ trans:strings.questions_no }}
             </div>
             <div
                 x-intersect:half="index = {{ index }}"
-                class="md:ml-24 max-w-[70ch] pr-8"
+                class="md:ml-24 max-w-[70ch] pr-8 mt-12"
             >
                 {{ partial:typography/prose as="div" class="md:prose-lg mb-6" }}
                     {{ text }}
@@ -42,7 +42,7 @@
         </article>
     {{ /questions }}
 
-    <nav class="fixed z-10 top-8 right-8">
+    <nav class="fixed z-10 top-8 right-8" x-cloak>
         <ul class="flex flex-col space-y-4 md:space-y-2">
             {{ questions }}
                 <li>
@@ -83,7 +83,7 @@
 
     <div class="fixed inset-0" aria-hidden="true">
         <div
-            class="absolute top-[30vh] inset-x-0 opacity-30 [clip-path:polygon(0_0,_0_0,_0_100%,_0_100%)]"
+            class="absolute top-72 inset-x-0 opacity-30 [clip-path:polygon(0_0,_0_0,_0_100%,_0_100%)]"
             x-effect="
                 gsap.to($el, {
                     clipPath: `polygon(0% 0%, ${percentage}% 0%, ${percentage}% 100%, 0% 100%)`,
@@ -104,7 +104,7 @@
                 })
             "
         ></div>
-        {{ svg:corner_crack alt="" aria-hidden="true" class="absolute top-0 right-0 w-1/2 md:w-1/4 h-auto opacity-20" }}
+        {{ svg:corner_crack alt="" aria-hidden="true" class="absolute top-0 right-0 w-1/2 md:w-1/4 h-auto opacity-10" }}
     </div>
 </main>
 <!-- End: /default.antlers.html -->
