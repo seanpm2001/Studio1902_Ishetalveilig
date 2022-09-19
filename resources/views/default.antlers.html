@@ -18,19 +18,19 @@
     "
     class="flex flex-col gap-y-12 md:gap-y-16 lg:gap-y-20 xl:gap-y-24"
 >
-    <nav class="fixed z-10 top-8 right-8" x-cloak>
+    <nav class="fixed z-20 top-8 right-8" x-cloak>
         <ul class="flex flex-col space-y-4 md:space-y-2">
             {{ questions }}
                 <li>
                     <a
-                        class="block w-5 h-5 rounded-full bg-white border border-primary cursor-pointer transition focus:outline-none focus-visible:ring-2 ring-secondary ring-offset-4 ring-offset-white"
-                        href="#"
+                        class="block w-5 h-5 rounded-full bg-white border border-primary cursor-pointer transition focus:outline-none focus-visible:ring-2 ring-secondary ring-offset-4 ring-offset-white select-none"
+                        href="#{{ title | slugify }}"
                         :class="{
-                            'border-white': index == {{ index}},
-                            'hover:bg-primary': index != {{ index}}
+                            'border-white': index == {{ index }},
+                            'hover:bg-primary': index != {{ index }}
                         }"
-                        @click.prevent="document.querySelectorAll('article')[{{ index }}].scrollIntoView({behavior: 'smooth'})"
-                        @keyup.enter.prevent="document.querySelectorAll('article')[{{ index }}].scrollIntoView({behavior: 'smooth'})"
+                        {{# @click.prevent="document.querySelectorAll('article')[{{ index }}].scrollIntoView({behavior: 'smooth'})"
+                        @keyup.enter.prevent="document.querySelectorAll('article')[{{ index }}].scrollIntoView({behavior: 'smooth'})" #}}
                         aria-label="{{ trans:strings.questions_step }} {{ count }}"
                     >
                         <div
@@ -51,17 +51,17 @@
             id="{{ title | slugify }}"
         >
             {{ once }}
-            <span id="content"></span>
+                <span id="content"></span>
             {{ /once }}
             <div class="flex flex-col md:flex-row pr-12">
-                <div class="flex-shrink-0 w-24 pr-3 mb-4 md:mb-0 md:text-right text-neutral/30 text-2xl md:text-4xl leading-tight">{{ count }}/{{ total_results }}</div>
+                <div class="flex-shrink-0 w-24 pr-3 mb-4 md:mb-0 md:text-right text-neutral/30 text-2xl md:text-4xl leading-tight select-none">{{ count }}/{{ total_results }}</div>
                 {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary" }}
             </div>
             <div class="font-title text-[40vw] md:text-[15rem] lg:text-[18rem] text-neutral uppercase leading-none -rotate-3">
                 {{ trans:strings.questions_no }}
             </div>
             <div
-                x-intersect:half="index = {{ index }}"
+                x-intersect:half="index = {{ index }}, history.pushState({}, '', '#{{ title | slugify }}')"
                 class="md:ml-24 max-w-[70ch] pr-8 mt-12"
             >
                 {{ partial:typography/prose as="div" class="md:prose-lg mb-6" }}
