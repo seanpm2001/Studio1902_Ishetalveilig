@@ -18,11 +18,41 @@
     "
     class="flex flex-col gap-y-12 md:gap-y-16 lg:gap-y-20 xl:gap-y-24"
 >
+    <nav class="fixed z-10 top-8 right-8" x-cloak>
+        <ul class="flex flex-col space-y-4 md:space-y-2">
+            {{ questions }}
+                <li>
+                    <a
+                        class="block w-5 h-5 rounded-full bg-white border border-primary cursor-pointer transition focus:outline-none focus-visible:ring-2 ring-secondary ring-offset-4 ring-offset-white"
+                        href="#"
+                        :class="{
+                            'border-white': index == {{ index}},
+                            'hover:bg-primary': index != {{ index}}
+                        }"
+                        @click.prevent="document.querySelectorAll('article')[{{ index }}].scrollIntoView({behavior: 'smooth'})"
+                        @keyup.enter.prevent="document.querySelectorAll('article')[{{ index }}].scrollIntoView({behavior: 'smooth'})"
+                        aria-label="{{ trans:strings.questions_step }} {{ count }}"
+                    >
+                        <div
+                            x-show="index == {{ index }}"
+                            x-transition.scale.70.opacity.duration.400ms
+                            aria-hidden="true"
+                        >
+                            {{ svg:cross class="w-[1.1rem] h-[1.1rem] stroke-primary" }}
+                        </div>
+                    </a>
+                </li>
+            {{ /questions }}
+        </ul>
+    </nav>
     {{ questions }}
         <article
             class="fluid-container h-auto min-h-screen relative z-10 py-8 flex flex-col"
             id="{{ title | slugify }}"
         >
+            {{ once }}
+            <span id="content"></span>
+            {{ /once }}
             <div class="flex flex-col md:flex-row pr-12">
                 <div class="flex-shrink-0 w-24 pr-3 mb-4 md:mb-0 md:text-right text-neutral/30 text-2xl md:text-4xl leading-tight">{{ count }}/{{ total_results }}</div>
                 {{ partial:typography/h1 content="{trans:strings.questions_gas}<br>{title}" color="text-primary" }}
@@ -41,32 +71,6 @@
             </div>
         </article>
     {{ /questions }}
-
-    <nav class="fixed z-10 top-8 right-8" x-cloak>
-        <ul class="flex flex-col space-y-4 md:space-y-2">
-            {{ questions }}
-                <li>
-                    <a
-                        class="block w-5 h-5 rounded-full bg-white border border-primary cursor-pointer transition"
-                        :class="{
-                            'border-white': index == {{ index}},
-                            'hover:bg-primary': index != {{ index}}
-                        }"
-                        @click.prevent="document.querySelectorAll('article')[{{ index }}].scrollIntoView({behavior: 'smooth'})"
-                        aria-label="{{ trans:strings.questions_step }} {{ count }}"
-                    >
-                        <div
-                            x-show="index == {{ index }}"
-                            x-transition.scale.70.opacity.duration.400ms
-                            aria-hidden="true"
-                        >
-                            {{ svg:cross class="w-[1.1rem] h-[1.1rem] stroke-primary" }}
-                        </div>
-                    </a>
-                </li>
-            {{ /questions }}
-        </ul>
-    </nav>
 
     <nav class="fixed z-50 bottom-8 right-8 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
         <button
