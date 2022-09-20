@@ -6,6 +6,19 @@
 2. run `php please make:user`
 3. run `npm i` && `npm run watch`
 
+The site is deployed to Netlify using the Statamic Static Site Generator. Due to Netlify limits the site has to runder on PHP 8.0
+
+* Build command: composer build
+* Publish directory: storage/app/static
+
+The environment variables needed on Netlify are:
+* APP_DEBUG
+* APP_ENV
+* APP_KEY
+* APP_NAME
+* APP_URL
+* STATAMIC_LICENSE_KEY
+
 ## Environment file contents
 
 ### Development
