@@ -17,7 +17,7 @@
             ? percentage = 100
             : percentage = index * 100 / {{ questions | count | subtract(1) }}
     "
-    class="flex flex-col gap-y-12 md:gap-y-16 lg:gap-y-20 xl:gap-y-24 overflow-hidden"
+    class="flex flex-col gap-y-12 md:gap-y-16 lg:gap-y-20 xl:gap-y-24 overflow-hidden {{ first ?= '-mt-12 md:-mt-16 lg:-mt-24' }}"
 >
     <nav class="fixed z-20 top-8 right-8" x-cloak>
         <ul class="flex flex-col space-y-4 md:space-y-2">
