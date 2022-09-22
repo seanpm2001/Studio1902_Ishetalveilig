@@ -16,9 +16,3 @@ fields:
           fields:
             -
               import: article
-        questions:
-          display: Questions
-          instructions: 'Add questions to this page.'
-          fields:
-            -
-              import: questions

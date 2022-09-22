@@ -1,4 +1,4 @@
-title: Page
+title: Questions
 sections:
   main:
     display: Main
@@ -15,7 +15,20 @@ sections:
           validate:
             - required
       -
-        import: page_builder
+        handle: questions
+        field:
+          mode: default
+          create: true
+          collections:
+            - questions
+          display: Questions
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate: required
   seo:
     display: SEO
     fields:
@@ -51,3 +64,8 @@ sections:
           max_items: 1
           listable: false
           localizable: true
+      -
+        handle: template
+        field:
+          type: hidden
+          value: questions

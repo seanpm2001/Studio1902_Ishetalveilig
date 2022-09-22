@@ -1,6 +1,7 @@
 ---
 id: home
-blueprint: page
+blueprint: questions
+template: questions
 title: Home
 updated_by: 67345c5a-fd3b-4628-977e-291fddd3ba07
 updated_at: 1663583170
