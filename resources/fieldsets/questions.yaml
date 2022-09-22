@@ -1,0 +1,17 @@
+title: 'Questions'
+fields:
+  -
+    handle: questions
+    field:
+      mode: default
+      create: true
+      collections:
+        - questions
+      display: Questions
+      type: entries
+      icon: entries
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      validate: required

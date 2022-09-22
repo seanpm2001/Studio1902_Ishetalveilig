@@ -1,10 +1,11 @@
 {{#
 	@name Questions
-	@desc The questions template.
+	@desc The Questions page builder block.
+    @set page.page_builder.questions
 #}}
 
-<!-- /questions.antlers.html -->
-<main
+<!-- /page_builder/_questions.antlers.html -->
+<section
     x-data="{
         index: 0,
         percentage: 0,
@@ -137,5 +138,5 @@
         ></div>
         {{ svg:corner_crack alt="" aria-hidden="true" class="absolute top-0 right-0 w-1/2 md:w-1/4 h-auto opacity-10" }}
     </div>
-</main>
-<!-- End: /questions.antlers.html -->
+</section>
+<!-- End: /page_builder/_questions.antlers.html -->

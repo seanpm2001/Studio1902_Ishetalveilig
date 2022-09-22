@@ -144,7 +144,7 @@ module.exports = {
           width: '100%',
           display: 'grid',
           rowGap: theme('spacing.12'),
-          paddingTop: theme('spacing.12'),
+          // paddingTop: theme('spacing.12'),
           paddingBottom: theme('spacing.12'),
           // If the last child of the outer grid is full width (e.g. when it has a full width
           // colored background), give it negative margin bottom to get it flush to your
@@ -157,7 +157,7 @@ module.exports = {
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
             rowGap: theme('spacing.16'),
-            paddingTop: theme('spacing.16'),
+            // paddingTop: theme('spacing.16'),
             paddingBottom: theme('spacing.16'),
             '& > *:last-child.w-full': {
               marginBottom: `-${theme('spacing.16')}`,
@@ -174,7 +174,7 @@ module.exports = {
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
             rowGap: theme('spacing.24'),
-            paddingTop: theme('spacing.24'),
+            // paddingTop: theme('spacing.24'),
             paddingBottom: theme('spacing.24'),
             '& > *:last-child.w-full': {
               marginBottom: `-${theme('spacing.24')}`,
