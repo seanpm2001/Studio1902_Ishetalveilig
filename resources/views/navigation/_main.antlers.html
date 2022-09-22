@@ -3,8 +3,18 @@
 	@desc The sites main navigation rendered on each page. There's a desktop and a mobile version.
 #}}
 
-{{# The desktop navigation. Hidden on smaller screen. Shown from md and up. #}}
-{{ partial:navigation/main_desktop }}
-
-{{# The mobile navigation. Hidden from md and up #}}
-{{ partial:navigation/main_mobile }}
+<nav class="fixed z-50 bottom-8 right-8 flex flex-row space-x-4">
+	<a href="https://twitter.com/ishetalveilig" target="_blank" class="flex items-center justify-center py-2 px-3 rounded-full bg-primary hover:bg-secondary text-white focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2">
+		{{ svg:twitter class="w-4 h-4 fill-white" }}
+	</a>
+	<button
+		x-show="navigator.share"
+		@click="
+			navigator.share({
+				title: document.title,
+				url: window.location.href
+			})
+		"
+		class="flex items-center justify-center py-2 px-3 rounded-full bg-secondary hover:bg-primary text-white focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
+	>{{ trans:strings.share }}</button>
+</nav>
