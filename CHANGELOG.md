@@ -1,5 +1,21 @@
 # Changelog
 
+## v6.1 (2022-10-07)
+
+### What's new
+- Ask for `APP_NAME` during configuration. bb9724b7 by @robdekort
+
+## v6.0 (2022-10-06)
+
+### What's new
+- Add a post install hook when installing Peak. [Update the Statamic/CLI](https://github.com/statamic/cli#updating-the-cli-tool) to use this feature. This optionally offers you to [configure Peak](https://peak.1902.studio/getting-started/installation.html#installation-options). #260 and #263 by @robdekort
+- Add a block installer command to install preconfigured blocks (partial and fieldset) into the page builder. #261 by @robdekort
+- Add command to add a partial (component, layout or typography) with IDE hinting and file system comments. #262 and #264 by @robdekort
+
+### What's improved
+- Update the `peak:clear-site` command so it can be run from the post install hook. 88de7ee7 by @robdekort
+- Assume `link_type` is `url` when none is provided to the button component. cab635fc by @robdekort
+
 ## v5.16 (2022-09-27)
 
 ### What's improved

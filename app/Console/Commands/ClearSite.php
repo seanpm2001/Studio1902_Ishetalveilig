@@ -21,7 +21,7 @@ class ClearSite extends Command
     *
     * @var string
     */
-    protected $name = 'peak:clear-site';
+    protected $name = 'statamic:peak:clear-site';
 
      /**
      * The console command description.
@@ -37,12 +37,12 @@ class ClearSite extends Command
      */
     public function handle()
     {
-        $clear_site = ($this->confirm('Are you sure you want to clear all default Peak content?', true)) ? true : false;
+        $clear_site = ($this->confirm('Do you want to clear all default Peak content?', false)) ? true : false;
 
         if ($clear_site) {
             $this->trashAssets();
             $this->clearGlobalSocialMedia();
-            $this->clearPageBuilder('/');
+            $this->clearHomePage();
             $this->trashPagesButHomeAnd404();
             $this->clearNavigation();
 
@@ -78,15 +78,15 @@ class ClearSite extends Command
     }
 
     /**
-     * Clear the page builder.
+     * Clear the home page.
      *
      * @return bool|null
      */
-    protected function clearPageBuilder($uri)
+    protected function clearHomePage()
     {
-        Entry::findByUri($uri)
-            ->set('page_builder', null)
-            ->save();
+        // Note: we can't use Entry::query()->save() when running from the PostInstallHook.
+        $stub = File::get(__DIR__.'/stubs/home.md.stub');
+        File::put(base_path('content/collections/pages/home.md'), $stub);
     }
 
     /**
