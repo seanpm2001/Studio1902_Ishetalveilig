@@ -16,7 +16,7 @@
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "spatie/browsershot": "^3.57",
-        "statamic/cms": "3.3.*",
+        "statamic/cms": "^3.4",
         "statamic/ssg": "^1.2"
     },
     "require-dev": {

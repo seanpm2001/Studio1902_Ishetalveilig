@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 67345c5a-fd3b-4628-977e-291fddd3ba07
-updated_at: 1663838832
+updated_at: 1677268906
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -15,7 +15,9 @@ og_image: home-og-1663618151.png
 twitter_image: home-twitter-1663618151.png
 page_builder:
   -
+    id: f2NkSb4W
     questions:
+      - 52b884d2-a6fb-4e65-91a2-177feed13017
       - 207388fc-d45a-4344-ad81-37351a1029b7
       - c773767f-a057-4ffb-a4ab-550baf95597b
       - d2019001-c750-49e8-9557-970878dca987
