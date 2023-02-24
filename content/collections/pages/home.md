@@ -3,14 +3,14 @@ id: home
 blueprint: page
 title: Home
 updated_by: 67345c5a-fd3b-4628-977e-291fddd3ba07
-updated_at: 1677268906
+updated_at: 1677270769
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 seo_title: 'Is het al veilig?'
-seo_description: 'Nee. Meer gas winnen in Groningen is sowieso niet veilig tot en met 2028. Dit zegt het huidige versterkingsplan, dat gebaseerd is op afbouw.'
+seo_description: 'Nee! En bovendien concludeert Pegas in haar rapport dat de belangen van Groningen stelselmatig genegeerd zijn en er sprake is van een ongekend systeemfalen.'
 og_image: home-og-1663618151.png
 twitter_image: home-twitter-1663618151.png
 page_builder:
